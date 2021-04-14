@@ -24,9 +24,9 @@ curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.10.0/kind-$(uname)-amd64"
 chmod +x ./kind
 mv ./kind /usr/local/bin/kind
 ```
-- Create cluster:
+- Create cluster on default cluster context named `kind`.:
 ```
-kind create cluster # Default cluster context name is `kind`.
+kind create cluster
 ```
 - Install helm:
 If you are using a Debian-based distribution you can install helm with:
