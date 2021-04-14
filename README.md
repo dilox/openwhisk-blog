@@ -59,8 +59,7 @@ curl https://openwhisk.ng.bluemix.net/cli/go/download/linux/amd64/wsk -o wsk && 
 wsk property set --apihost <whisk.ingress.apiHostName>:<whisk.ingress.apiHostPort>
 wsk property set --auth 23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP
 ```
-- Verify and interact with your OpenWhisk Deployment
-if you do not configure ssl, use flag -i
+- Verify and interact with your OpenWhisk Deployment (-i disable SSL checking)
 ```
 wsk -i action list
 ```
