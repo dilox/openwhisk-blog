@@ -1,8 +1,8 @@
 # openwhisk-blog
 
-Apache OpenWhisk is an open source, distributed Serverless platform that executes functions (fx) in response to events at any scale. The OpenWhisk platform supports a programming model in which developers write functional logic (called Actions), in any supported programming language, that can be dynamically scheduled and run in response to associated events (via Triggers) from external sources (Feeds) or from HTTP requests.
+[Apache OpenWhisk](https://openwhisk.apache.org/) is an open source, distributed Serverless platform that executes functions (fx) in response to events at any scale. The OpenWhisk platform supports a programming model in which developers write functional logic (called Actions), in any supported programming language, that can be dynamically scheduled and run in response to associated events (via Triggers) from external sources (Feeds) or from HTTP requests.
 
-You can install OpenWhisk on your Kubernetes cluster, there are only some limitations: version 1.16+, ability to create Ingresses and a default StorageClass that supports Dynamic Volume Provision.
+You can install OpenWhisk on your [Kubernetes](https://kubernetes.io/) cluster, there are only some limitations: version 1.16+, ability to create Ingresses and a default StorageClass that supports Dynamic Volume Provision.
 
 This means you can choice beetwen every type of Kubernetes installation you prefer: provision a cluster from a cloud provider (GKE, EKS etc..), or an "hard-way installation" on bare metal are both fine.
 
@@ -18,7 +18,7 @@ This little guide will cover the steps required to have OpenWhisk up and running
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 ```
 
-- Install kind:
+- Install [kind](https://kind.sigs.k8s.io/):
 ```
 curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.10.0/kind-$(uname)-amd64"
 chmod +x ./kind
@@ -28,7 +28,7 @@ mv ./kind /usr/local/bin/kind
 ```
 kind create cluster # Default cluster context name is `kind`.
 ```
-- Install helm:
+- Install [helm](https://helm.sh/):
 If you are using a Debian-based distribution you can install helm with:
 
 ```
@@ -50,7 +50,7 @@ git clone https://github.com/apache/openwhisk-deploy-kube.git
 helm install owdev ./helm/openwhisk -n openwhisk --create-namespace -f mycluster.yaml
 ```
 
-- Install openwhisk-cli
+- Install [openwhisk-cli](https://github.com/apache/openwhisk-cli)
 ```
 curl https://openwhisk.ng.bluemix.net/cli/go/download/linux/amd64/wsk -o wsk && chmod +x ./wsk && mv ./wsk /usr/local/bin
 ```
